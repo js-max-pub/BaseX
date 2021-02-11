@@ -10,7 +10,7 @@ export default class {
 	constructor(host) {
 		this.#host = host;
 	}
-	user( user, pass){
+	user(user, pass) {
 		this.#user = user;
 		this.#pass = pass;
 		return this;
@@ -32,18 +32,18 @@ export default class {
 	get baseAuth() {
 		return { Authorization: 'Basic ' + btoa(this.#user + ":" + this.#pass) }
 	}
-	get parent(){
-		if(this.#document) this.#document = ''
+	get parent() {
+		if (this.#document) this.#document = ''
 		else this.#database = '';
 		return this;
 	}
-	load( options = {}) {
+	load(options = {}) {
 		// options = {...}
-		return fetch(this.URL , { headers: this.baseAuth }).then(x => x.text())
+		return fetch(this.URL, { headers: this.baseAuth }).then(x => x.text())
 	}
-	query( query = '') {
+	query(query = '') {
 		// console.log('query',this.URL+url)
-		return fetch(this.URL , { method: 'POST', headers: this.baseAuth, body: `<query><text><![CDATA[${query}]]></text></query>` }).then(x => x.text())
+		return fetch(this.URL, { method: 'POST', headers: this.baseAuth, body: `<query><text><![CDATA[${query}]]></text></query>` }).then(x => x.text())
 	}
 
 	async info() {
