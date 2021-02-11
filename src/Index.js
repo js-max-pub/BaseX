@@ -7,14 +7,15 @@ export default class extends Base {
 		this.database = database
 		this.#type = indexType
 	}
-	get URL(){
+	get URL() {
 		return this.database.URL
 	}
 	get auth() {
 		return this.database.auth;
 	}
 	async create() {
-		return await this.execute(`<create-index type='${this.#type}'/>`);
+		console.log(`create ${this.#type}-index on database ${this.database.name}`)
+		await this.execute(`<create-index type='${this.#type}'/>`);
 		return this;
 	}
 	drop() {
