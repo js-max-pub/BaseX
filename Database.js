@@ -1,9 +1,11 @@
 import Base from './Base.js';
+import Document from './Document.js';
 import Index from './Index.js';
 
 export default class extends Base {
 	#name
 	constructor(server, databaseName) {
+		super()
 		this.server = server
 		this.#name = databaseName
 	}
@@ -21,6 +23,9 @@ export default class extends Base {
 	async renameTo(name = '') {
 		await this.execute(`<alter-db name='${this.#name}' newname='${name}'/>`)
 		return this;
+	}
+	list() {
+		return this.get();
 	}
 	copyTo(name = '') {
 		// <copy name='...' newname='...'/>

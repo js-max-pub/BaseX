@@ -3,6 +3,7 @@ import Base from './Base.js';
 export default class extends Base {
 	#name
 	constructor(database, documentName) {
+		super()
 		this.database = database
 		this.#name = documentName
 	}

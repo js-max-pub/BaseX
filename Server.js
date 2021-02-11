@@ -1,5 +1,6 @@
 // import XML from './xml.js';
 import Base from './Base.js';
+import Database from './Database.js';
 
 export default class extends Base {
 	#host
@@ -7,6 +8,7 @@ export default class extends Base {
 	#pass
 
 	constructor(host) {
+		super()
 		this.#host = host;
 	}
 	user(user, pass) {
@@ -26,7 +28,9 @@ export default class extends Base {
 		return { Authorization: 'Basic ' + btoa(this.#user + ":" + this.#pass) }
 	}
 
-
+	info(){
+		return this.get()
+	}
 
 
 	// async info() {

@@ -15,7 +15,7 @@ export default class {
 
 	execute(command = '') {
 		// <commands><create-db name='db1'/><create-db name='db2'/></commands>
-		return this.post(`<command>${command}</command>`)
+		return this.post(`<commands>${command}</commands>`)
 		// return fetch(this.URL, { method: 'POST', headers: this.auth, body: `<command>${command}</command>` }).then(x => x.text())
 	}
 }
