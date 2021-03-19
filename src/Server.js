@@ -28,7 +28,7 @@ export default class extends Base {
 		return { Authorization: 'Basic ' + btoa(this.#user + ":" + this.#pass) }
 	}
 
-	databases(){
+	databases() {
 		return this.get()
 	}
 

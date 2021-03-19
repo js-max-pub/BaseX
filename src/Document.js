@@ -19,7 +19,7 @@ export default class extends Base {
 	id(id) {
 		return this.kv('id', id)
 	}
-	set(content=''){
+	set(content = '') {
 		// <replace path='...'>[input]</replace>
 	}
 }

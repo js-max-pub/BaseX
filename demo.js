@@ -1,4 +1,4 @@
-import {db} from './settings.js';
+import { db } from './settings.js';
 
 console.log(await db.server.info())
 
@@ -9,4 +9,4 @@ await db.index('attribute').create()
 
 await db.optimize()
 
-console.log(await db.document('00872156').kv('OPUS','bll'))
+console.log(await db.document('00872156').kv('OPUS', 'bll'))
